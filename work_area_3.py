@@ -724,4 +724,11 @@ import re
 #         print(f'{obj}- dir')
 
 
-print('Hello')
+# print('Hello')
+# elif os.path.isfile(path) and os.path.getsize(path) == 0:
+        #     # os.mkdir('empty_file')
+        #     path1 = os.getcwd()
+        #     path2 = 'empty_file'
+        #     os.renames(path1, path2)
+        #     path3 = os.getcwd()
+        #     print(f'файл {f} со старым адресом {path1} перемещен по адресу {path3}')
