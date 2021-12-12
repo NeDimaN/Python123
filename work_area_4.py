@@ -134,24 +134,29 @@
 # c1.print_info()
 
 
-class Person:
-    skill = 10  # переменная для квалификации
+# class Person:
+#     skill = 10  # переменная для квалификации
+#
+#     def print_info(self, name, surname):
+#         self.name = name
+#         self.surname = surname
+#         print(f'Данные сотрудника : {self.name} {self.surname}')
+#
+#     def add_skill(self, k):
+#         self.skill += k
+#         print(f"Квалификация сотрудника {self.name}: {self.skill}" )
+#
+#
+# p1 = Person()
+# p1.print_info('Виктор', "Резник")
+# p1.add_skill(3)
+# p2 = Person()
+# p2.print_info('Анна', 'Долгих')
 
-    def print_info(self, name, surname):
-        self.name = name
-        self.surname = surname
-        print(f'Данные сотрудника : {self.name} {self.surname}')
 
-    def add_skill(self, k):
-        self.skill += k
-        print(f"Квалификация сотрудника {self.name}: {self.skill}" )
-
-
-p1 = Person()
-p1.print_info('Виктор', "Резник")
-p1.add_skill(3)
-p2 = Person()
-p2.print_info('Анна', 'Долгих')
-
-
-
+# def sum_arg(a, b):
+#     print(a + b)
+#
+#
+# sum_arg(5, 2)
+# sum_arg('Hello', ' world')
