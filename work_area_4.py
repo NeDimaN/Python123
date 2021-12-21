@@ -558,23 +558,123 @@
 # print(date2.string_to_bd())
 
 
+# class Area:
+#     count = 0
+#
+#     @staticmethod
+#     def geron1(a, b, c):
+#         Area.count += 1
+#         perimetr = (a + b + c) / 2
+#         return (perimetr * (perimetr - a) * (perimetr - b) * (perimetr - c)) ** 0.5
+#
+#     @staticmethod
+#     def treangle(a, h):
+#         return 0.5 * h * a
+#
+#
+# print(Area.geron1(3, 4, 5))
+# print(Area.treangle(6, 7))
+# a1 = Area()
+# print(a1.geron1(2, 6, 7))
+# print(Area.count)
 
-class Area:
-    count = 0
 
-    @staticmethod
-    def geron1(a, b, c):
-        Area.count += 1
-        perimetr = (a + b + c) / 2
-        return (perimetr * (perimetr - a) * (perimetr - b) * (perimetr - c)) ** 0.5
+# class Account:
+#     rate_usd = 0.013
+#     rate_euro = 0.011
+#     suffix = 'RUB'
+#     suffix_usd = 'USD'
+#     suffix_eur = 'EUR'
+#
+#     def __init__(self, surname, num, percent, value=0):
+#         self.surname = surname  # имя владельца
+#         self.num = num  # номер счета
+#         self.percent = percent  # процент начисления
+#         self.value = value  # сумма в рублях
+#         print(f'Счет #{num} принадлежащий {surname} был открыт.')
+#         print('*' * 50)
+#
+#     @staticmethod
+#     def convert(value, rate):
+#         return value * rate
+#
+#     def convert_to_usd(self):  # перевод в доллары
+#         usd_val = Account.convert(self.value, Account.rate_usd)
+#         print(f'Состояние счета: {usd_val} {Account.suffix_usd}.')
+#
+#     def print_balance(self):
+#         print(f'Текущий баланс {self.value} {Account.suffix}')
+#
+#     def print_info(self):  # метод вывода информации о счете
+#         print('Информация о счете')
+#         print('-' * 20)
+#         print(f'#{self.num}')
+#         print(f'Владелец: {self.surname}')
+#         self.print_balance()
+#         print(f'Процент {self.percent: .0%}')
+#         print('-' * 20)
+#
+#
+# acc = Account('Ненашев', 12345, 0.03, 1000)
+# acc.print_info()
+# acc.convert_to_usd()
 
-    @staticmethod
-    def treangle(a, h):
-        return 0.5 * h * a
+
+class Point:
+
+    def __init__(self, x=0, y=0):
+        self.x = x
+        self.y = y
+
+    def __str__(self):
+        return f'{self.x}, {self.y}'
 
 
-print(Area.geron1(3, 4, 5))
-print(Area.treangle(6, 7))
-a1 = Area()
-print(a1.geron1(2, 6, 7))
-print(Area.count)
+class Prop:
+    def __init__(self, sp: Point, ep: Point, color: str = 'red', width: int = 1):
+        print('Инициализатор базового класса Prop')
+        self.sp = sp
+        self.ep = ep
+        self.color = color
+        self.__width = width
+
+    def get_width(self):
+        return self.__width
+
+
+class Line(Prop):
+    def __init__(self, *args):
+        print('Переопределенный инициализатор Line')
+        # Prop.__init__(self, *args)
+        super().__init__(*args)
+        self.__width = 5
+    # def __init__(self, sp: Point, ep: Point, color: str = 'red', width: int = 1):
+    #     self.sp = sp
+    #     self.ep = ep
+    #     self.color = color
+    #     self.width = width
+
+    def draw_line(self):
+        print(f'Рисование линии: {self.sp}, {self.ep}, {self.color}, {self.get_width()}')
+
+
+class Rect(Prop):
+    # def __init__(self, sp: Point, ep: Point, color: str = 'red', width: int = 1):
+    #     self.sp = sp
+    #     self.ep = ep
+    #     self.color = color
+    #     self.width = width
+
+    def draw_rect(self):
+        print(f'Рисование прямоугольника: {self.sp}, {self.ep}, {self.color}, {self.get_width()}')
+
+
+line = Line(Point(1, 2), Point(10, 20))
+line.draw_line()
+print(line.__dict__)
+
+# line.width = 10
+# print(line.width)
+# line.draw_line()
+# rect = Rect(Point(30, 40), Point(7, 86))
+# rect.draw_rect()
