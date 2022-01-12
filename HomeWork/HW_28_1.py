@@ -29,6 +29,38 @@ class Account:
     def set_eur_rate(cls, rate):  # редактирование рубля по отношению к евро
         cls.rate_euro = rate
 
+    @property
+    def num(self):
+        return self.__num
+
+    @num.setter
+    def num(self, num):
+        self.__num = num
+
+    @property
+    def surname(self):
+        return self.__surname
+
+    @surname.setter
+    def surname(self, surname):
+        self.__surname = surname
+
+    @property
+    def percent(self):
+        return self.__percent
+
+    @percent.setter
+    def percent(self, percent):
+        self.__percent = percent
+
+    @property
+    def value(self):
+        return self.__value
+
+    @value.setter
+    def value(self, val):
+        self.__value = val
+
     def add_percents(self):  # начисление процентов
         self.__value += self.__value * self.__percent
         print('Проценты были успешно начислены!')
@@ -67,30 +99,6 @@ class Account:
         print(f'Процент {self.__percent: .0%}')
         print('-' * 20)
 
-    def set_num(self, num):
-        self.__num = num
-
-    def get_num(self):
-        return self.__num
-
-    def set_surname(self, surname):
-        self.__surname = surname
-
-    def get_surname(self):
-        return self.__surname
-
-    def set_percent(self, percent):
-        self.__percent = percent
-
-    def get_percent(self):
-        return self.__percent
-
-    def set_value(self, val):
-        self.__value = val
-
-    def get_value(self):
-        return self.__value
-
 
 acc = Account('Пушкин', 12345, 0.03, 1000)
 acc.print_info()
@@ -103,10 +111,10 @@ print()
 acc.convert_to_usd()
 acc.convert_to_eur()
 print()
-acc.set_surname('Дантес')
-acc.set_num(6666)
-acc.set_percent(0.05)
-acc.set_value(2000)
+acc.surname = 'Дантес'
+acc.num = 6666
+acc.percent = 0.05
+acc.value = 2000
 acc.print_info()
 
 acc.add_percents()
