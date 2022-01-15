@@ -986,47 +986,330 @@ from abc import ABC, abstractmethod
 # q = Queen()
 # q.draw()
 # q.move()
-from math import pi
+# from math import pi
+#
+# class Table:
+#     def __init__(self, width=None, length=None, radius=None):
+#         if radius is None:
+#             self._width = width
+#             self._length = length
+#         else:
+#             self._radius = radius
+#
+#     def set_radius(self, radius):
+#         self._radius = radius
+#
+#     def set_sides(self, width=None, length=None ):
+#         if length is None:
+#             self._width = self._length = width
+#         else:
+#             self._width = width
+#             self._length = length
+#     def calc_area(self):
+#         raise NotImplementedError('В дочернем классе должен быть определен метод calc_area')
+#
+# class Sq_table(Table):
+#     def calc_area(self):
+#         return self._width * self._length
+#
+#
+# class Round_table(Table):
+#     def calc_area(self):
+#         return pi * self._radius ** 2
+#
+#
+# t = Sq_table(20, 10)
+# t.set_sides(2)
+# print(t.__dict__)
+# print(t.calc_area())
+# t1 = Round_table(radius=10)
+# print(t1.__dict__)
+# print(t1.calc_area())
+#
+# t2 = Round_table(radius=20)
+# t2.set_radius(60)
+# print(t2.__dict__)
+# print(t2.calc_area())
+# ===================================
 
-class Table:
-    def __init__(self, width=None, length=None, radius=None):
-        if radius is None:
-            self._width = width
-            self._length = length
-        else:
-            self._radius = radius
-
-    def set_radius(self, radius):
-        self._radius = radius
-
-    def set_sides(self, width=None, length=None ):
-        if length is None:
-            self._width = self._length = width
-        else:
-            self._width = width
-            self._length = length
-    def calc_area(self):
-        raise NotImplementedError('В дочернем классе должен быть определен метод calc_area')
-
-class Sq_table(Table):
-    def calc_area(self):
-        return self._width * self._length
+from abc import ABC, abstractmethod
 
 
-class Round_table(Table):
-    def calc_area(self):
-        return pi * self._radius ** 2
+class Currency(ABC):
+    def __init__(self, value):
+        self.value = value
+
+    @abstractmethod
+    def convert_to_rub(self):
+        pass
+
+    def print_value(self):
+        print(self.value, end=' ')
 
 
-t = Sq_table(20, 10)
-t.set_sides(2)
-print(t.__dict__)
-print(t.calc_area())
-t1 = Round_table(radius=10)
-print(t1.__dict__)
-print(t1.calc_area())
+class Dollar(Currency):
+    rate_to_rub = 74.16
+    suffix = 'USD'
 
-t2 = Round_table(radius=20)
-t2.set_radius(60)
-print(t2.__dict__)
-print(t2.calc_area())
+    def convert_to_rub(self):
+        rub = self.value * Dollar.rate_to_rub
+        return rub
+
+    def print_value(self):
+        super().print_value()
+        print(Dollar.suffix, end=' ')
+
+
+class Euro(Currency):
+    rate_to_eur = 90.14
+    suffix = 'EURO'
+
+    def convert_to_rub(self):
+        rub = self.value * Euro.rate_to_eur
+        return rub
+
+    def print_value(self):
+        super().print_value()
+        print(Euro.suffix, end=' ')
+
+
+d = [Dollar(5), Dollar(10), Dollar(50), Dollar(100)]
+e = [Euro(5), Euro(10), Euro(50), Euro(100)]
+print('*' * 50)
+for elem in d:
+    elem.print_value()
+    print(f'= {elem.convert_to_rub():.2f} RUB')
+print('*'* 50)
+for elem in e:
+    elem.print_value()
+    print(f'= {elem.convert_to_rub():.2f} RUB')
+
+# ==================================================
+
+# from abc import ABC, abstractmethod
+#
+#
+# class Father(ABC):
+#     @abstractmethod
+#     def display1(self):
+#         pass
+#
+#     @abstractmethod
+#     def display2(self):
+#         pass
+#
+#
+# class Child(Father):
+#     def display1(self):
+#         print('Child Class')
+#         print("Display 1 Abstract Method")
+#
+#
+# class GrandChild(Child):
+#     def display2(self):
+#         print('GrandChild Class')
+#         print("Display 2 Abstract Method")
+#
+#
+# gc = GrandChild()
+# gc.display2()
+# gc.display1()
+
+
+# ===========================
+
+
+# class Geeksforgeeks:
+#     def __init__(self):
+#         self.inner = self.Inner()
+#
+#     def show(self):
+#         print('Это внешний класс')
+#
+#     class Inner:
+#         def __init__(self):
+#             self.inner_inner = self.InnerClass
+#
+#         def show(self):
+#             print('Это вложенный класс')
+#
+#         class InnerClass:
+#             def show(self):
+#                 print('Это класс вложенный во внутрь вложенного')
+#
+#
+# outer = Geeksforgeeks()
+# outer.show()
+#
+# inner1 = outer.inner
+# inner1.show()
+# inner2 = outer.inner1.inner_inner
+# inner2.show()
+# ==================================================
+
+# class OS:
+#     def system(self):
+#         return 'Windows 10'
+#
+#
+# class CPU:
+#     def make(self):
+#         return 'Intel'
+#
+#     def model(self):
+#         return 'Core-i7'
+
+# class Computer:
+#     def __init__(self):
+#         self.name = 'PC001'
+#         self.os = self.OS()
+#         self.cpu = self.CPU()
+#
+#     class OS:
+#         def system(self):
+#             return 'Windows 10'
+#
+#     class CPU:
+#         def make(self):
+#             return 'Intel'
+#
+#         def model(self):
+#             return 'Core-i7'
+#
+#
+# comp = Computer()
+# my_os = comp.os
+# my_cpu = comp.cpu
+#
+# print(comp.name)
+# print(my_os.system())
+# print(my_cpu.make())
+# print(my_cpu.model())
+
+
+# class Base:
+#     def __init__(self):
+#         self.db = self.Inner()
+#
+#     def display(self):
+#         print("In base class")
+#
+#     class Inner:
+#         def display1(self):
+#             print('Inner of base class')
+#
+#
+# class SubClass(Base):
+#     def __init__(self):
+#         print('In Subclass')
+#         super().__init__()
+#
+#     class Inner(Base.Inner):
+#
+#         def display2(self):
+#             print('Inner of Subclass')
+#
+#
+# a = SubClass()
+# a.display()
+#
+# # b = a.db
+# b = SubClass.Inner()
+# b.display1()
+# b.display2()
+
+
+# ===============================================
+
+
+# class Creature:
+#     def __init__(self, name):
+#         self.name = name
+#
+#
+# class Animal(Creature):
+#     def sleep(self):
+#         print(self.name + ' is sleeping')
+#
+#
+# class Pet(Creature):
+#     def play(self):
+#         print(self.name + ' is playing')
+#
+#
+# class Dog(Animal, Pet):
+#     def bark(self):
+#         print(self.name + ' is braking')
+#
+#
+# b = Dog('Baggi')
+# b.bark()
+# b.play()
+# b.sleep()
+# ===========================================
+
+# class A:
+#     # def __init__(self):
+#     #     print('Инициализатор класса А')
+#     def hi(self):
+#         print('A')
+#
+# class B(A):
+#     def hi(self):
+#         print('B')
+#
+#     # def __init__(self):
+#     #     print('Инициализатор класса B')
+#
+#
+# class C(A):
+#     def hi(self):
+#         print('C')
+#
+#     # def __init__(self):
+#     #     print('Инициализатор класса C')
+#
+#
+# class D(B, C):
+#     pass
+#
+#     # def __init__(self):
+#     #     print('Инициализатор класса D')
+#
+#
+# d = D()
+# d.hi()
+# print(D.mro())
+# ==================================================
+
+# class Point:
+#     def __init__(self, x, y):
+#         self.x = x
+#         self.y = y
+#
+#     def __str__(self):
+#         return f'({self.x}), ({self.y})'
+#
+#
+# class Styles:
+#     def __init__(self, color='red', width=1):
+#         print('Инициализатор Styles')
+#         self._color = color
+#         self._width = width
+#
+#
+# class Pos:
+#     def __init__(self, sp: Point, ep: Point, *args):
+#         print("Инициализатор Pos")
+#         self._sp = sp
+#         self._ep = ep
+#         Styles.__init__(self, *args)
+#
+#
+# class Line(Pos, Styles):
+#     def draw(self):
+#         print(f'Рисование линии: {self._sp}, {self._ep}, {self._color}, {self._width}')
+#
+#
+# l1 = Line(Point(10, 10), Point(100, 100), 'green', 5)
+# l1.draw()
