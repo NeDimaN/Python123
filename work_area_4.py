@@ -1187,16 +1187,16 @@ from abc import ABC, abstractmethod
 # print(my_cpu.model())
 
 
-class Base:
-    def __init__(self):
-        self.db = self.Inner()
-
-    def display(self):
-        print("In base class")
-
-    class Inner:
-        def display1(self):
-            print('Inner of base class')
+# class Base:
+#     def __init__(self):
+#         self.db = self.Inner()
+#
+#     def display(self):
+#         print("In base class")
+#
+#     class Inner:
+#         def display1(self):
+#             print('Inner of base class')
 
 
 # class SubClass(Base):
@@ -1210,10 +1210,10 @@ class Base:
 #             print('Inner of Subclass')
 
 
-a = Base()
-a.display()
-b = a.db
-b.display1()
+# a = Base()
+# a.display()
+# b = a.db
+# b.display1()
 
 # a = SubClass()
 # a.display()
@@ -1318,3 +1318,139 @@ b.display1()
 #
 # l1 = Line(Point(10, 10), Point(100, 100), 'green', 5)
 # l1.draw()
+# ============================================================
+
+
+# class Displayer:
+#     @staticmethod
+#     def display(message):
+#         print(message)
+#
+#
+# class LoggerMixin:
+#     def log(self, message, filename='logfile.txt'):
+#         with open(filename, 'a') as fh:
+#             fh.write(message)
+#
+#     def display(self, message):
+#         Displayer.display(message)
+#         self.log(message)
+#
+#
+# class MySubClass(LoggerMixin, Displayer):
+#     def log(self, message, filename=''):
+#         super().log(message, filename='subclass.txt')
+#
+#
+# sub = MySubClass()
+# sub.display('Это строка будет отображаться и записываться в файл')
+
+# ==================================================================
+# Миксины/примеси
+# class Goods:
+#     def __init__(self, name, weight, price):
+#         super().__init__()
+#         print('Init Goods')
+#         self.name = name
+#         self.weight = weight
+#         self.price = price
+#
+#     def print_info(self):
+#         print(f'{self.name},{self.weight}, {self.price}')
+#
+#
+# class MixinLog:
+#     ID = 0
+#
+#     def __init__(self):
+#         print('Это Init MixinLog')
+#         MixinLog.ID += 1
+#         self.id = MixinLog.ID
+#
+#     def save_sell_log(self):
+#         print(f'{self.id}: товар был продан 00:00 часов')
+#
+#
+# class NoteBook(Goods, MixinLog):
+#     pass
+#
+#
+# n = NoteBook('HP', 1.5, 35000)
+# n.print_info()
+# n.save_sell_log()
+# print(NoteBook.mro())
+# n2 = NoteBook('HP', 1.5, 35000)
+# n2.save_sell_log()
+
+# ============================================
+
+# Перегрузка операторов
+
+class Clock:
+    __DAY = 86400  # 24*60*60- число секунд в одном дне
+
+    def __init__(self, secs: int):
+        if not isinstance(secs, int):
+            raise ValueError('Секунды должны быть целым числом')
+
+        self.__secs = secs % self.__DAY
+
+    def get_format_time(self):
+        s = self.__secs % 60  # секунды
+        m = (self.__secs // 60) % 60  # минуты
+        h = (self.__secs // 3600) % 24  # часы
+        return f'{Clock.__get_form(h)}:{Clock.__get_form(m)}:{Clock.__get_form(s)}'
+
+    @staticmethod
+    def __get_form(x):
+        return str(x) if x > 9 else '0' + str(x)
+
+    def __add__(self, other):
+        if not isinstance(other, Clock):
+            raise ArithmeticError('Правый операнд должен быть типом Clock')
+        return Clock(self.__secs + other.__secs)
+
+    def __sub__(self, other):
+        if not isinstance(other, Clock):
+            raise ArithmeticError('Правый операнд должен быть типом Clock')
+        return Clock(self.__secs - other.__secs)
+
+    def __mul__(self, other):
+        if not isinstance(other, Clock):
+            raise ArithmeticError('Правый операнд должен быть типом Clock')
+        return Clock(self.__secs * other.__secs)
+
+    def __floordiv__(self, other):
+        if not isinstance(other, Clock):
+            raise ArithmeticError('Правый операнд должен быть типом Clock')
+        return Clock(self.__secs // other.__secs)
+
+    def __mod__(self, other):
+        if not isinstance(other, Clock):
+            raise ArithmeticError('Правый операнд должен быть типом Clock')
+        return Clock(self.__secs % other.__secs)
+
+    def __eq__(self, other):
+        return self.__secs == other.__secs
+
+    # if self.__secs == other.__secs:
+    #     return True
+    # return False
+    def __ne__(self, other):
+        return not self.__eq__(other)
+
+
+c1 = Clock(200)
+c2 = Clock(200)
+c3 = Clock(1200)
+print(c2.get_format_time())
+print(c1.get_format_time())
+print(c3.get_format_time())
+print(c3 > c1)
+
+
+
+# if c1 == c2:
+#     print('Время одинаковое')
+# if c1 != c3:
+#     print('Время разное')
