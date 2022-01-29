@@ -55,7 +55,7 @@ class Rectangle(Shape):
         return self.a * self.b
 
     def draw_shape(self):
-        return ('*' * self.a + '\n') * self.b
+        return ('*' * self.b + '\n') * self.a
 
     def out_info(self):
         print(f'===Квадрат===\nДлина:{self.a}\nШирина:{self.b}\nЦвет:{self.color}\nПлощадь:{self.square()}\n'
