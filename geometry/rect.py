@@ -7,6 +7,10 @@ class Rectangle:
         return 2 * (self.w + self.h)
 
 
+__author__ = 'Dima'
+if __name__ == '__main__':
+    print(f'Module {__name__}(author: {__author__})')
+
 # class Square:
 #     def __init__(self, a):
 #         self.a = a
