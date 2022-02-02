@@ -789,7 +789,6 @@
 #
 # rect = Rectangle(10, 20, 'green')
 # print(rect.area())
-import re
 
 # class UserDate:
 #     def __init__(self, fio, old, ps, weight):
@@ -963,8 +962,6 @@ import re
 
 # ==========================================================
 
-
-from abc import ABC, abstractmethod
 
 # абстрактный класс
 # class Chess(ABC):
@@ -1534,8 +1531,6 @@ from abc import ABC, abstractmethod
 
 # =======================================================
 
-import math
-
 # class Point:
 #     __slots__ = ('x', 'y', '__length')
 #
@@ -2009,8 +2004,56 @@ import math
 # lst[0] = 3
 # print(lst, lst.get_length())
 
-Mylist = type(
-    'MyList',
-    (list,),
-    dict(get_length=lambda self: len(self))
-)
+# Mylist = type(
+#     'MyList',
+#     (list,),
+#     dict(get_length=lambda self: len(self))
+# )
+# ================================================ 01.02.2022
+
+# Создание модулей
+
+# import math
+# from math import pi
+#
+# print(math.pi)
+# print(pi)
+
+# class Rectangle:
+#     def __init__(self, w, h):
+#         self.w = w
+#         self.h = h
+#
+#     def get_perimetr(self):
+#         return 2 * (self.w + self.h)
+#
+#
+# class Square:
+#     def __init__(self, a):
+#         self.a = a
+#
+#     def get_perimetr(self):
+#         return 4 * self.a
+#
+#
+# class Triangle:
+#     def __init__(self, a, b, c):
+#         self.a = a
+#         self.b = b
+#         self.c = c
+#
+#     def get_perimetr(self):
+#         return self.a + self.b + self.c
+
+from geometry import rect, sq, trian
+# from geometry import *
+
+r1 = rect.Rectangle(1, 2)
+r2 = rect.Rectangle(3, 4)
+s1 = sq.Square(10)
+s2 = sq.Square(20)
+t1 = trian.Triangle(1, 2, 3)
+t2 = trian.Triangle(4, 5, 6)
+shape = [r1, r2, s1, s2, t1, t2]
+for i in shape:
+    print(i.get_perimetr())

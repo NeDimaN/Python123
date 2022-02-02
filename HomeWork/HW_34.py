@@ -1,28 +1,44 @@
 class Person:
-    def __init__(self, surname, forename, old):
-        self.__surname = surname
-        self.__forename = forename
-        self.__old = old
+    def __init__(self, surname, name, old):
+        self.surname = surname
+        self.name = name
+        self.old = old
+
+    @property
+    def data(self):
+        return self.surname, self.name, self.old
+
+    def __str__(self):
+        return f'{self.surname}, {self.name}, {self.old}'
 
 
-class Sort:
-    def __init__(self, list_name):
-        self.__list_name = list_name
+class SortKey:
+    def __init__(self, *args):
+        self.__list_name = args
 
-    def __call__(self, *args, **kwargs):
-        if len(args) == 1 and args[0] == 'surname':
-            return sorted(self.__list_name, key=)
-
-        elif len(args) == 2 and args[0] == 'surname' and args[1] == 'forename':
-            return sorted(self.__list_name,key=)
+    def __call__(self, lst):
+        lst.sort(key=lambda j: [j.__dict__[key] for key in self.__list_name])
 
 
-p = [Person('Иванов', 'Игорь', '28'),
-     Person('Петров', 'Степан', '21'),
-     Person('Сидоров', 'Антон', '25'),
-     Person('Петров', 'Анатолий', '11'),
-     Person('Иванов', 'Иван', '28')
-     ]
+p1 = [Person('Иванов', 'Игорь', '28'),
+      Person('Петров', 'Степан', '21'),
+      Person('Сидоров', 'Антон', '25'),
+      Person('Петров', 'Анатолий', '11'),
+      Person('Иванов', 'Иван', '28')
+      ]
 
-SortKey = Sort(p)
-print(SortKey('surname'))
+for i in p1:
+    print(i.data)
+print()
+
+s1 = SortKey('surname')
+s1(p1)
+for i in p1:
+    print(i.data)
+print()
+s2 = SortKey('surname', 'name')
+s2(p1)
+for i in p1:
+    print(i.data)
+
+
