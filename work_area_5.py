@@ -492,32 +492,195 @@ import csv
 #     writer.writerow({'Имя': 'Дима', 'Возраст': '6'})
 #     writer.writerow({'Имя': 'Маша', 'Возраст': '7'})
 #     writer.writerow({'Имя': 'Матвей', 'Возраст': '12'})
- #===============================================
+# ===============================================
 
-data = [{
-    'hostname': 'sw1',
-    'location': 'London',
-    'model': '3750',
-    'vendor': 'Cisco'
-}, {
-    'hostname': 'sw2',
-    'location': 'Liverpool',
-    'model': '3850',
-    'vendor': 'Cisco'
-}, {
-    'hostname': 'sw3',
-    'location': 'Liverpool',
-    'model': '3650',
-    'vendor': 'Cisco'
-}, {
-    'hostname': 'sw4',
-    'location': 'London',
-    'model': '3650',
-    'vendor': 'Cisco'
-}]
+# data = [{
+#     'hostname': 'sw1',
+#     'location': 'London',
+#     'model': '3750',
+#     'vendor': 'Cisco'
+# }, {
+#     'hostname': 'sw2',
+#     'location': 'Liverpool',
+#     'model': '3850',
+#     'vendor': 'Cisco'
+# }, {
+#     'hostname': 'sw3',
+#     'location': 'Liverpool',
+#     'model': '3650',
+#     'vendor': 'Cisco'
+# }, {
+#     'hostname': 'sw4',
+#     'location': 'London',
+#     'model': '3650',
+#     'vendor': 'Cisco'
+# }]
+#
+# with open('dict.csv', 'w') as f:
+#     writer = csv.DictWriter(f, delimiter=';', lineterminator='\r', fieldnames=list(data[0].keys()))
+#     writer.writeheader()
+#     for d in data:
+#         writer.writerow(d)
 
-with open('dict.csv', 'w') as f:
-    writer = csv.DictWriter(f, delimiter=';', lineterminator='\r', fieldnames=list(data[0].keys()))
-    writer.writeheader()
-    for d in data:
-        writer.writerow(d)
+# =======================================================15.02.2022
+
+# Парсинг
+# from bs4 import BeautifulSoup
+#
+# f = open('index.html', encoding='utf-8').read()
+# soup = BeautifulSoup(f, 'html.parser')
+# # row = soup.find('div', class_='name') # find -возвращает первый найденный элемент
+# # # row = soup.find_all('div', class_='name') # findAll- возвращает все найденные элементы
+# # row = soup.find_all('div', class_='row')[1].find('div', class_='links')
+# # row = soup.find('div', {'class': 'name'})
+# # row = soup.find('div', {'data-set': 'salary'})
+# alena = soup.find('div', text='Alena')
+# print(alena)
+
+# ====================================
+# import requests
+#
+# r = requests.get('https://ru.wordpress.org/')
+# print(r.status_code)
+# print(r.headers)
+# print(r.headers['Content-Type'])
+# print(r.text)
+# ==============================
+# import requests
+# from bs4 import BeautifulSoup
+#
+#
+# def get_html(url):
+#     r = requests.get(url)
+#     return r.text
+#
+#
+# def get_data(html):
+#     soup = BeautifulSoup(html, 'lxml')
+#     p1 = soup.find('header', id='masthead').find('p', class_='site-title').text
+#     return p1
+#
+#
+# def main():
+#     url = 'https://ru.wordpress.org/'
+#     print(get_data(get_html(url)))
+#
+#
+# if __name__ == '__main__':
+#     main()
+# =================================
+# import requests
+# from bs4 import BeautifulSoup
+# import re
+# import csv
+#
+#
+# def get_html(url):
+#     r = requests.get(url)
+#     return r.text
+#
+#
+# def refined(s):
+#     res = re.sub(r'\D+', '', s)
+#     return res
+#
+#
+# def write_csv(data):
+#     with open('plugins.csv', 'a') as f:
+#         writer = csv.writer(f, delimiter=';', lineterminator='\r')
+#         writer.writerow((data['name'], data['url'], data['rating']))
+#
+#
+# def get_data(html):
+#     soup = BeautifulSoup(html, 'lxml')
+#     s = soup.find_all('section', class_='plugin-section')[1]
+#     plugin = s.find_all('article')
+#
+#     for plugin in plugin:
+#         name = plugin.find('h3').text
+#         url = plugin.find('h3').find('a').get('href')
+#         rating = plugin.find('span', class_='rating-count').find('a').text
+#         r = refined(rating)
+#         data = {'name': name, 'url': url, 'rating': r}
+#         write_csv(data)
+#
+#     # return len(plugin)
+#
+#
+# def main():
+#     url = 'https://ru.wordpress.org/plugins/'
+#     get_data(get_html(url))
+#
+#
+# if __name__ == '__main__':
+#     main()
+# =====================================================16.02.2022
+
+
+import requests
+import csv
+from bs4 import BeautifulSoup
+
+
+def get_html(url):
+    r = requests.get(url)
+    return r.text
+
+
+def write_csv(data):
+    with open('plugins1.csv', 'a') as f:
+        writer = csv.writer(f, delimiter=';', lineterminator='\r')
+        writer.writerow((data['name'], data['url'], data['snippet'], data['active'], data['cy']))
+
+
+def refine_cy(s):
+    return s.split(' ')[-1]
+
+
+def get_page_data(html):
+    soup = BeautifulSoup(html, 'lxml')
+    elements = soup.find_all('article', class_='plugin-card')
+    for el in elements:
+        try:
+            name = el.find('h3').text
+        except ValueError:
+            name = ''
+
+        try:
+            url = el.find('h3').find('a').get('href')
+
+        except ValueError:
+            url = ""
+
+        try:
+            snippet = el.find('div', class_='entry-excerpt').text.strip()
+        except ValueError:
+            snippet = ''
+        try:
+            active = el.find('span', class_='active-installs').text.strip()
+        except ValueError:
+            active = ''
+        try:
+            c = el.find('span', class_='tested-with').text.strip()
+            cy = refine_cy(c)
+        except ValueError:
+            cy = ''
+
+        data = {'name': name,
+                'url': url,
+                'snippet': snippet,
+                'active': active,
+                'cy': cy
+                }
+        write_csv(data)
+        # print(cy)
+
+
+def main():
+    for i in range(1, 10):
+        url = f'https://ru.wordpress.org/plugins/browse/blocks/page/{i}/'
+        get_page_data(get_html(url))
+
+
+if __name__ == '__main__':
+    main()
