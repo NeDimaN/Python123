@@ -617,70 +617,106 @@ import csv
 # =====================================================16.02.2022
 
 
-import requests
-import csv
-from bs4 import BeautifulSoup
+# import requests
+# import csv
+# from bs4 import BeautifulSoup
+#
+#
+# def get_html(url):
+#     r = requests.get(url)
+#     return r.text
+#
+#
+# def write_csv(data):
+#     with open('plugins1.csv', 'a') as f:
+#         writer = csv.writer(f, delimiter=';', lineterminator='\r')
+#         writer.writerow((data['name'], data['url'], data['snippet'], data['active'], data['cy']))
+#
+#
+# def refine_cy(s):
+#     return s.split(' ')[-1]
+#
+#
+# def get_page_data(html):
+#     soup = BeautifulSoup(html, 'lxml')
+#     elements = soup.find_all('article', class_='plugin-card')
+#     for el in elements:
+#         try:
+#             name = el.find('h3').text
+#         except ValueError:
+#             name = ''
+#
+#         try:
+#             url = el.find('h3').find('a').get('href')
+#
+#         except ValueError:
+#             url = ""
+#
+#         try:
+#             snippet = el.find('div', class_='entry-excerpt').text.strip()
+#         except ValueError:
+#             snippet = ''
+#         try:
+#             active = el.find('span', class_='active-installs').text.strip()
+#         except ValueError:
+#             active = ''
+#         try:
+#             c = el.find('span', class_='tested-with').text.strip()
+#             cy = refine_cy(c)
+#         except ValueError:
+#             cy = ''
+#
+#         data = {'name': name,
+#                 'url': url,
+#                 'snippet': snippet,
+#                 'active': active,
+#                 'cy': cy
+#                 }
+#         write_csv(data)
+#         # print(cy)
+#
+#
+# def main():
+#     for i in range(1, 10):
+#         url = f'https://ru.wordpress.org/plugins/browse/blocks/page/{i}/'
+#         get_page_data(get_html(url))
+#
+#
+# if __name__ == '__main__':
+#     main()
+
+# ==========================================
+
+# from bs4 import BeautifulSoup
+# import requests
+#
+#
+# class Parser:
+#     html = ''
+#
+#     def __init__(self, url):
+#         self.url = url
+#
+#     def get_html(self):
+#         req = requests.get(self.url).text
+#         self.html = BeautifulSoup(req, 'lxml')
+#
+#     def parsing(self):
+#         elements = self.html.find_all('div', class_='model-price-range')  # список []
+#         prices = []
+#         for element in elements:
+#             pr1 = ele
+#
+#     def run(self):
+#         self.get_html()
+#         self.parsing()
+#
+#
+# pars = Parser(f'https://www.e-katalog.ru/list/206/')
+# pars.run()
+#========================================================
 
 
-def get_html(url):
-    r = requests.get(url)
-    return r.text
 
 
-def write_csv(data):
-    with open('plugins1.csv', 'a') as f:
-        writer = csv.writer(f, delimiter=';', lineterminator='\r')
-        writer.writerow((data['name'], data['url'], data['snippet'], data['active'], data['cy']))
 
-
-def refine_cy(s):
-    return s.split(' ')[-1]
-
-
-def get_page_data(html):
-    soup = BeautifulSoup(html, 'lxml')
-    elements = soup.find_all('article', class_='plugin-card')
-    for el in elements:
-        try:
-            name = el.find('h3').text
-        except ValueError:
-            name = ''
-
-        try:
-            url = el.find('h3').find('a').get('href')
-
-        except ValueError:
-            url = ""
-
-        try:
-            snippet = el.find('div', class_='entry-excerpt').text.strip()
-        except ValueError:
-            snippet = ''
-        try:
-            active = el.find('span', class_='active-installs').text.strip()
-        except ValueError:
-            active = ''
-        try:
-            c = el.find('span', class_='tested-with').text.strip()
-            cy = refine_cy(c)
-        except ValueError:
-            cy = ''
-
-        data = {'name': name,
-                'url': url,
-                'snippet': snippet,
-                'active': active,
-                'cy': cy
-                }
-        write_csv(data)
-        # print(cy)
-
-
-def main():
-    for i in range(1, 10):
-        url = f'https://ru.wordpress.org/plugins/browse/blocks/page/{i}/'
-        get_page_data(get_html(url))
-
-
-if __name__ == '__main__':
-    main()
