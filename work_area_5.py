@@ -714,9 +714,28 @@ import csv
 #
 # pars = Parser(f'https://www.e-katalog.ru/list/206/')
 # pars.run()
-#========================================================
+# ========================================================
 
 
-
-
-
+# import socket
+#
+# URLS = {
+#     '/': 'index page',
+#     '/blog': 'blog page'
+# }
+#
+#
+#
+# def run():
+#     server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+#     server_socket.bind(('127.0.0.1', 5000))
+#     server_socket.listen()  # 127.0.0.1:5000
+#
+#     while True:
+#         client_socket, addr = server_socket.accept()
+#         request = client_socket.recv(1024)
+#         print(f'Клиент: {addr} => \n{request.decode("utf-8")}\n')
+#
+#
+# if __name__ == '__main__':
+#     run()
