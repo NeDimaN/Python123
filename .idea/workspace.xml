@@ -2,14 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="794b7313-cfcb-4203-80f3-4e175d8c7608" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/HomeWork/HW_42/controller_film.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/HomeWork/HW_42/launch_film.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/HomeWork/HW_42/model_film.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/HomeWork/HW_42/view_film.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Work/view.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/temples/blog.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/temples/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/view.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/work_area_6.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/articles/controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/articles/controller.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/articles/model.py" beforeDir="false" afterPath="$PROJECT_DIR$/articles/model.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/articles/view.py" beforeDir="false" afterPath="$PROJECT_DIR$/articles/view.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/work_area_5.py" beforeDir="false" afterPath="$PROJECT_DIR$/work_area_5.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -20,6 +18,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="HTML File" />
         <option value="Python Script" />
       </list>
     </option>
@@ -42,32 +41,12 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
-  <component name="RunManager" selected="Python.launch_film">
-    <configuration name="HW_41" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="pythonProject1" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/HomeWork" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/HomeWork/HW_41.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
+  <component name="RunManager" selected="Python.work_area_6">
     <configuration name="controller" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="pythonProject1" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -152,13 +131,34 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="work_area_6" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="pythonProject1" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/work_area_6.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.work_area_6" />
+        <item itemvalue="Python.work_area_5" />
         <item itemvalue="Python.launch_film" />
         <item itemvalue="Python.project_articles" />
-        <item itemvalue="Python.work_area_5" />
         <item itemvalue="Python.controller" />
-        <item itemvalue="Python.HW_41" />
       </list>
     </recent_temporary>
   </component>
