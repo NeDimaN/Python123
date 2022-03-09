@@ -2,13 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="794b7313-cfcb-4203-80f3-4e175d8c7608" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Work/view.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/temples/blog.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/temples/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/view.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/work_area_6.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/work_area_5.py" beforeDir="false" afterPath="$PROJECT_DIR$/work_area_5.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/work_area_6.py" beforeDir="false" afterPath="$PROJECT_DIR$/work_area_6.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
