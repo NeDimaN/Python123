@@ -1,0 +1,26 @@
+{% load static %}
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+<div class="main_con">
+    <h1>Правила пользования генератором</h1>
+    <div class="main">Сайт позволяет в автоматическом режиме сгенерировать пароль с учетом ваших предпочтений</div>
+    <div class="description_con">
+        <ul>
+            <li>Выберите количество символов в пароле</li>
+             <li>Выберите элементы из которых должен состоять пароль</li>
+             <li>Нажмите кнопку- Сгенерировать пароль</li>
+        </ul>
+
+        <p><a href="{% url 'home' %}">Вернуться на главную</a></p>
+    </div>
+</div>
+</body>
+</html>

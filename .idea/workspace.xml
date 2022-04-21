@@ -2,42 +2,50 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="794b7313-cfcb-4203-80f3-4e175d8c7608" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/HomeWork/HW_49PY/HW_49.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/HomeWork/HW_49PY/templates/footer.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/HomeWork/HW_49PY/templates/header.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/HomeWork/HW_49PY/templates/main.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Home_project/first.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Home_project/static/css/style.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Home_project/templates/about.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Home_project/templates/base.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Home_project/templates/contact.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Home_project/templates/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Home_project/templates/login.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Home_project/templates/page404.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/flsk/FDataBase.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/flsk/first.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/flsk/sq_db.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/flsk/static/css/style.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/flsk/templates/about.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/flsk/templates/add_post.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/flsk/templates/base.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/flsk/templates/contact.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/flsk/templates/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/flsk/templates/login.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/flsk/templates/page404.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/flsk/templates/post.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates_jinja/templates/123.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates_jinja/templates/about.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates_jinja/templates/dialogs.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates_jinja/templates/footer.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates_jinja/templates/header.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates_jinja/templates/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates_jinja/templates/main.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates_jinja/templates/page.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/work_area_7.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/HomeWork_51/hw_FDataBase.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/HomeWork_51/hw_first.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/HomeWork_51/hw_flsk.db" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/HomeWork_51/hw_sq_db.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/HomeWork_51/static/css/hw_style.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/HomeWork_51/templates/add_product.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/HomeWork_51/templates/hw_base.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/HomeWork_51/templates/hw_index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/HomeWork_51/templates/product.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/first-app/password_generator_project/generator/static/css/style.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/first-app/password_generator_project/generator/templates/generator/description.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/first-app/password_generator_project/generator/templates/generator/home.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/first-app/password_generator_project/generator/templates/generator/password.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/flsk/UserLogin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/flsk/admin/admin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/flsk/admin/static/css/style.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/flsk/admin/templates/admin/base_admin.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/flsk/admin/templates/admin/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/flsk/admin/templates/admin/listpubs.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/flsk/admin/templates/admin/listuser.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/flsk/admin/templates/admin/login.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/flsk/templates/profile.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/flsk/templates/register.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/second-app/personal_portfolio/blog/templates/blog/blogs.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/second-app/personal_portfolio/blog/templates/blog/details.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/second-app/personal_portfolio/blog/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/second-app/personal_portfolio/skills/static/css/style.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/second-app/personal_portfolio/skills/templates/skills/base.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/second-app/personal_portfolio/skills/templates/skills/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tlt-app/tlt_portfolio/parts/static/css/style.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tlt-app/tlt_portfolio/parts/templates/parts/base.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tlt-app/tlt_portfolio/parts/templates/parts/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/pythonProject1.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/pythonProject1.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates_jinja/example_1.py" beforeDir="false" afterPath="$PROJECT_DIR$/templates_jinja/example_1.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flsk/FDataBase.py" beforeDir="false" afterPath="$PROJECT_DIR$/flsk/FDataBase.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flsk/first.py" beforeDir="false" afterPath="$PROJECT_DIR$/flsk/first.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flsk/flsk.db" beforeDir="false" afterPath="$PROJECT_DIR$/flsk/flsk.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flsk/sq_db.sql" beforeDir="false" afterPath="$PROJECT_DIR$/flsk/sq_db.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flsk/static/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/flsk/static/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flsk/templates/add_post.html" beforeDir="false" afterPath="$PROJECT_DIR$/flsk/templates/add_post.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flsk/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/flsk/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flsk/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/flsk/templates/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flsk/templates/post.html" beforeDir="false" afterPath="$PROJECT_DIR$/flsk/templates/post.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/profile.db" beforeDir="false" afterPath="$PROJECT_DIR$/profile.db" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,6 +78,7 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
@@ -83,32 +92,13 @@
       <recent name="C:\Users\user\PycharmProjects\pythonProject\pythonProject1\Home_project\static\css" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\user\PycharmProjects\pythonProject\pythonProject1\HomeWork_51\static\css" />
+      <recent name="C:\Users\user\PycharmProjects\pythonProject\pythonProject1\HomeWork_51\templates" />
       <recent name="C:\Users\user\PycharmProjects\pythonProject\pythonProject1\HomeWork\HW_49PY\templates" />
       <recent name="C:\Users\user\PycharmProjects\pythonProject\pythonProject1\HomeWork" />
     </key>
   </component>
   <component name="RunManager" selected="Python.first">
-    <configuration name="HW_48" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="pythonProject1" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/HomeWork" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/HomeWork/HW_48.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
     <configuration name="HW_49" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="pythonProject1" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -172,6 +162,27 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="hw_first" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="pythonProject1" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/HomeWork_51" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/HomeWork_51/hw_first.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="work_area_7" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="pythonProject1" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -196,10 +207,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Python.first" />
+        <item itemvalue="Python.hw_first" />
         <item itemvalue="Python.HW_49" />
         <item itemvalue="Python.work_area_7" />
         <item itemvalue="Python.example_1" />
-        <item itemvalue="Python.HW_48" />
       </list>
     </recent_temporary>
   </component>
@@ -228,5 +239,8 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
 </project>

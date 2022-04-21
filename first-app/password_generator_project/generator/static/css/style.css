@@ -1,0 +1,42 @@
+body{
+    background: lightblue;
+    font-family: Verdana;
+
+}
+
+.container{
+    width: 400px;
+    margin: 0 auto;
+}
+
+.container h1{
+    text-align: center;
+}
+.container form, .container h2{
+    background: lightyellow;
+    padding: 20px;
+    box-sizing: border-box;
+    border-radius: 6px;
+
+}
+.description_con ul{
+    list-style: none;
+    background: lightyellow;
+    padding: 20px;
+    box-sizing: border-box;
+    border-radius: 6px;
+
+}
+
+.main{
+    text-align: center;
+    background: lightyellow;
+    padding: 20px;
+    box-sizing: border-box;
+    border-radius: 6px;
+}
+
+.main_con h1{
+text-align: center;
+}
+
