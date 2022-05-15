@@ -7,6 +7,26 @@
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
 <body>
+{% if user.is_authenticated %}
+<div class="menu">
+    <div class="wrap">
+        <div class="logo">
+            <a href="{% url 'index' %}"><img src="{% static 'parts/logo.png' %}"></a>
+        </div>
+        <ul>
+            <li class="user">Пользователь: {{ user.username }}</li>
+            <li><a href="{% url 'index' %}">Главная</a></li>
+            <li><a href="{% url 'blog:blogs' %}">Блог</a></li>
+            <li><form action="{% url 'todo:logoutuser' %}" method="POST">
+                    {% csrf_token %}
+                    <button class="top">Выйти</button>
+            </form>
+            </li>
+
+        </ul>
+    </div>
+</div>
+{% else %}
 <div class="menu">
     <div class="wrap">
         <div class="logo">
@@ -15,10 +35,14 @@
         <ul>
             <li><a href="{% url 'index' %}">Главная</a></li>
             <li><a href="{% url 'blog:blogs' %}">Блог</a></li>
+            <li><a href="{% url 'todo:signupuser' %}">Регистрация</a></li>
+            <li><a href="{% url 'todo:loginuser' %}">Войти</a></li>
 
         </ul>
     </div>
 </div>
+{% endif %}
+
   <div class="content">
     <div class="wrap">
       {% block content%}
