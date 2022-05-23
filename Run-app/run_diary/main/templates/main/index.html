@@ -1,0 +1,20 @@
+{% extends 'main/base.html' %}
+
+{% block content %}
+<h1>Что такое RunForrestRun.TLT?</h1>
+<p class="description">Это онлайн дневник тренировок, который позволяет вести учет всех тренировок
+    и видеть результат физического развития. Если вы новичок,
+    то вам тем более нужно вести тренировочный дневник.</p>
+<div class="block">
+    {% for p in posts %}
+    <div class="element">
+        <div><img class="img" src="{{ p.photo.url }}"></div>
+        <div class="text">
+            <h2>{{ p.title }}</h2>
+            <p>{{ p.content }}</p>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+{% endblock %}
