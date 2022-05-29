@@ -1,7 +1,29 @@
 {% extends 'main/base.html' %}
-
+{% load active_tags %}
 {% block content %}
-
-{{ part.title}}
+<div class="active">
+<div class="sidebar">
+    <ul>
+        {% if cat_selected == 0 %}
+        <li class="selected">Все категории</li>
+        {% else %}
+        <li><a href="{% url 'race' %}">Все категории</a></li>
+        {% endif %}
+        {% show_categories cat_selected=cat_selected %}
+    </ul>
+</div>
+<div class="part">
+    <h2>{{ part.title}}</h2>
+        {% if part.photo %}
+                <img class="image" src="{{ part.photo.url }}">
+            {% endif %}
+    <p>{{ part.content|linebreaks}}</p>
+     <p>Расстояние: {{ part.km }} км</p>
+    <p>Время: {{ part.time }} часа</p>
+    <p>Минимальный пульс: {{ part.min_pulse }}</p>
+    <p>Средний пульс: {{ part.av_pulse }}</p>
+    <p>Максимальный пульс: {{ part.max_pulse }}</p>
+</div>
+</div>
 
 {% endblock %}

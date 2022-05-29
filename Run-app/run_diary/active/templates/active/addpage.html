@@ -1,0 +1,25 @@
+{% extends 'main/base.html' %}
+{% load active_tags %}
+{% block content %}
+<h1>{{ title }}</h1>
+<div class="active_form">
+    <div class="sidebar">
+        <ul>
+            {% if cat_selected == 0 %}
+            <li class="selected">Все категории</li>
+            {% else %}
+            <li><a href="{% url 'race' %}">Все категории</a></li>
+            {% endif %}
+            {% show_categories cat_selected=cat_selected %}
+        </ul>
+    </div>
+
+    <div>
+    <form  class="form" action="{% url 'add_page' %}" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="form-error">{{ form.non_field_error }}</div>
+        {{ form.as_p }}
+        <button>Добавить</button>
+    </form>
+</div>
+{% endblock %}
