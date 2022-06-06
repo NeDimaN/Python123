@@ -22,3 +22,18 @@ def first_page(request):
 
     }
     return render(request, 'cms/index.html', dict_obj)
+
+
+def thanks_page(request):
+    if request.POST:
+        name = request.POST['name']
+        phone = request.POST['phone']
+        element = Order(order_name=name, order_phone=phone)
+        element.save()
+        return render(request, 'cms/thanks.html', {'name': name})
+
+    else:
+        return render(request, 'cms/thanks.html')
+
+
+
