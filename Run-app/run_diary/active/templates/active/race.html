@@ -30,6 +30,8 @@
 
         <ul>
             {% for p in parts %}
+            {%  if p.user == user_id %}
+
             <li>
                 <p class="first">Категория: {{ p.cat }}</p>
                 <div class="active_text">
@@ -43,6 +45,7 @@
                 </div>
                 <p class="date">Дата: {{ p.time_created|date:"d-m-Y H:i:s" }}</p>
             </li>
+               {% endif %}
             {% endfor %}
         </ul>
         {% if page_obj.has_other_pages %}

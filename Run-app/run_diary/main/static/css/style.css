@@ -12,13 +12,14 @@ body{
     max-width: 1350px;
     margin: 0 auto;
     padding: 20px;
-    box-sizing: border-box;
+    
 
 }
 .content .wrap{
     background: white;
     padding: 40px;
     box-sizing: border-box;
+    
     
 }
 
@@ -42,6 +43,8 @@ a:hover{
     align-items: center;
     font-size: 20px;
     font-weight: bold;
+    justify-content: space-between;
+
 
 }
 
@@ -53,8 +56,17 @@ a:hover{
 
 }
 .last{
-    flex-basis: 40%;
+    flex-basis: 30%;
     text-align: right;
+    vertical-align: auto;
+    color: white;
+    display: inline-flex;
+    
+
+}
+.last li{
+    text-align: right;
+    vertical-align: auto;
 }
 
 .block{
@@ -263,4 +275,49 @@ label{
     margin: 6px;
     font-weight: bold;
 }
+
+input, textarea{
+    width: 100%;
+    margin-top: 6px;
+    padding: 6px;
+    box-sizing: border-box;
+}
+
+label{
+    font-size: 20px;
+
+}
+button{
+    background: #424446;
+    color: white;
+    padding: 10px 40px;
+    font-size: 20px;
+}
+
+#id_is_published{
+    width: 20px;
+    height: 20px;
+}
+#id_cat{
+    font-size: 20px;
+    padding: 4px;
+
+}
+
+
+.logout{
+    margin-bottom: 40px;
+
+}
+.logout a{
+    font-size: 20px;
+    color: white;
+    background: #424446;
+    padding: 20px 86px;
+    font-weight: bold;
+
+}
+
+
+
 

@@ -1,4 +1,5 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
+from django.contrib.auth import login
 from django.views.generic import ListView, CreateView
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
@@ -32,6 +33,10 @@ class RegisterUser(DataMixin, CreateView):
         c_def = self.get_user_context(title='Регистрация')
         return dict(list(context.items()) + list(c_def.items()))
 
+    def form_valid(self, form):
+        user = form.save()
+        login(self.request, user)
+        return redirect('race')
 
 class LoginUser(DataMixin, LoginView):
     form_class = AuthenticationForm

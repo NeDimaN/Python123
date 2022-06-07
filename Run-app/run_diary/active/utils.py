@@ -8,7 +8,7 @@ menu = [
     {'title': 'Активность', 'url_name': 'race'},
     {'title': 'Добавить активность', 'url_name': 'add_page'},
     {'title': 'Блог', 'url_name': 'index'},
-    {'title': 'Выйти', 'url_name': 'index'},
+
 
 ]
 

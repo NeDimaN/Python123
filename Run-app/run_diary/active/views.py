@@ -36,7 +36,7 @@ class ActiveHome(DataMixin, ListView):
         return dict(list(context.items()) + list(c_def.items()))
 
     def get_queryset(self):
-        user = User.objects.get(id=1)
+
         return Active.objects.filter(is_published=True).select_related('cat')
 
 

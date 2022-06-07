@@ -17,7 +17,7 @@ class Active(models.Model):
     time_update = models.DateTimeField(auto_now=True, verbose_name='Дата обновления')
     is_published = models.BooleanField(default=True, verbose_name='Опубликовано')
     cat = models.ForeignKey('Category', on_delete=models.PROTECT, verbose_name='Категория')
-    author = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
+    user = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
 
     def __str__(self):
         return self.title
