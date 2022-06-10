@@ -34,10 +34,10 @@
         <ul>
 
             {% for p in parts %}
-                {% if user =='admin' %}
+
 
             <li>
-                <p>{{p.user}} </p>
+                <p>{{p.auth}} </p>
                 <p>{{request.user}} </p>
                 <p class="first">Категория: {{ p.cat }}</p>
                 <div class="active_text">
@@ -51,7 +51,7 @@
                 </div>
                 <p class="date">Дата: {{ p.time_created|date:"d-m-Y H:i:s" }}</p>
             </li>
-                {% endif%}
+
             {% endfor %}
         </ul>
 

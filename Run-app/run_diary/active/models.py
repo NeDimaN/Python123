@@ -3,6 +3,7 @@ from django.urls import reverse
 from django.contrib.auth.models import User
 
 
+
 class Active(models.Model):
     title = models.CharField(max_length=255, verbose_name='Название')
     slug = models.SlugField(max_length=255, unique=True, db_index=True, verbose_name='URL')
@@ -17,7 +18,7 @@ class Active(models.Model):
     time_update = models.DateTimeField(auto_now=True, verbose_name='Дата обновления')
     is_published = models.BooleanField(default=True, verbose_name='Опубликовано')
     cat = models.ForeignKey('Category', on_delete=models.PROTECT, verbose_name='Категория')
-    user = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
+    auth = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
 
     def __str__(self):
         return self.title
