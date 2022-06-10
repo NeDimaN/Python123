@@ -1,9 +1,3 @@
-def to_camel_case(text):
-    s = text.replace("-", " ").replace("_", " ")
-    s = s.split()
-    if len(text) == 0:
-        return text
-    return s[0] + ''.join(i.capitalize() for i in s[1:])
-
-
-print(to_camel_case("the_stealth_warrior"))
+d={1,2}
+print(d)
+print(set([1,2]))

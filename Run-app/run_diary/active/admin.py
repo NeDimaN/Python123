@@ -19,5 +19,16 @@ class CategoryAdmin(admin.ModelAdmin):
     search_fields = ('name',)
 
 
+class NewsAdmin(admin.ModelAdmin):
+    prepopulated_fields = {
+        'slug': ('title',)}
+    list_display = ('id', 'title', 'photo')
+    list_display_links = ('id', 'title')
+    search_fields = ('title', 'content')
+    # list_editable = ('is_published',)
+    # list_filter = ('is_published', 'time_created')
+
+
 admin.site.register(Active, ActiveAdmin)
 admin.site.register(Category, CategoryAdmin)
+admin.site.register(News, NewsAdmin)

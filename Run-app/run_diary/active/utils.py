@@ -4,8 +4,8 @@ from .models import *
 
 menu = [
     {'title': 'Упражнения', 'url_name': 'index'},
-    {'title': 'Новости', 'url_name': 'index'},
-    {'title': 'Активность', 'url_name': 'race'},
+    {'title': 'Новости', 'url_name': 'news'},
+    # {'title': 'Активность', 'url_name': 'race'},
     {'title': 'Добавить активность', 'url_name': 'add_page'},
     {'title': 'Блог', 'url_name': 'index'},
 
